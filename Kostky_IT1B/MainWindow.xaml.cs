@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,10 +42,49 @@ namespace Kostky_IT1B
         {
             InitializeComponent();
             ZobrazKostky();
+            
+        }
+
+        private ImageSource GetImage(byte[] resource)
+        {
+            MemoryStream memoryStream = new MemoryStream(resource);
+            BitmapFrame bitmapFrame = BitmapFrame.Create(memoryStream);
+            Image image = new Image();
+            image.Source = bitmapFrame;
+            return image.Source;
+        }
+
+        private void ZobrazKostku(Rectangle rectangle, int cislo)
+        {
+            if (cislo == 1)
+            {
+                rectangle.Fill = new ImageBrush(GetImage(Properties.Resources.dice_one));
+            }
+            else if (cislo == 2)
+            {
+                rectangle.Fill = new ImageBrush(GetImage(Properties.Resources.dice_two));
+            }
+            else if (cislo == 3)
+            {
+                rectangle.Fill = new ImageBrush(GetImage(Properties.Resources.dice_three));
+            }
+            else if (cislo == 4)
+            {
+                rectangle.Fill = new ImageBrush(GetImage(Properties.Resources.dice_four));
+            }
+            else if (cislo == 5)
+            {
+                rectangle.Fill = new ImageBrush(GetImage(Properties.Resources.dice_five));
+            }
+            else if (cislo == 6)
+            {
+                rectangle.Fill = new ImageBrush(GetImage(Properties.Resources.dice_six));
+            }
         }
 
         private void ZobrazKostky()
         {
+            ZobrazKostku(k1, kostky[0].Hodnota);
             kostka1.Content = kostky[0].Hodnota;
             kostka2.Content = kostky[1].Hodnota;
             kostka3.Content = kostky[2].Hodnota;
