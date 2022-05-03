@@ -39,73 +39,12 @@
             <RowDefinition Height="3*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Rectangle Name="k1" Grid.Column="1" Grid.Row="5" />
-        <Label x:Name="kostka1"
-               Content="0" 
-               BorderThickness="1" 
-               BorderBrush="Black" 
-               Grid.Column="1" 
-               Grid.Row="1" 
-               HorizontalAlignment="Stretch"                
-               VerticalAlignment="Stretch" 
-               FontSize="40"
-               HorizontalContentAlignment="Center"
-               VerticalContentAlignment="Center"/>
-        <Label x:Name="kostka2"
-               Content="0" 
-               BorderThickness="1" 
-               BorderBrush="Black" 
-               Grid.Column="3" 
-               Grid.Row="1" 
-               HorizontalAlignment="Stretch"                
-               VerticalAlignment="Stretch" 
-               FontSize="40"
-               HorizontalContentAlignment="Center"
-               VerticalContentAlignment="Center"/>
-        <Label x:Name="kostka3"
-               Content="0" 
-               BorderThickness="1" 
-               BorderBrush="Black" 
-               Grid.Column="5" 
-               Grid.Row="1" 
-               HorizontalAlignment="Stretch"                
-               VerticalAlignment="Stretch" 
-               FontSize="40"
-               HorizontalContentAlignment="Center"
-               VerticalContentAlignment="Center"/>
-        <Label x:Name="kostka4"
-               Content="0" 
-               BorderThickness="1" 
-               BorderBrush="Black" 
-               Grid.Column="7" 
-               Grid.Row="1" 
-               HorizontalAlignment="Stretch"                
-               VerticalAlignment="Stretch" 
-               FontSize="40"
-               HorizontalContentAlignment="Center"
-               VerticalContentAlignment="Center"/>
-        <Label x:Name="kostka5"
-               Content="0" 
-               BorderThickness="1" 
-               BorderBrush="Black" 
-               Grid.Column="9" 
-               Grid.Row="1" 
-               HorizontalAlignment="Stretch"                
-               VerticalAlignment="Stretch" 
-               FontSize="40"
-               HorizontalContentAlignment="Center"
-               VerticalContentAlignment="Center"/>
-        <Label x:Name="kostka6"
-               Content="0" 
-               BorderThickness="1" 
-               BorderBrush="Black" 
-               Grid.Column="11" 
-               Grid.Row="1" 
-               HorizontalAlignment="Stretch"                
-               VerticalAlignment="Stretch" 
-               FontSize="40"
-               HorizontalContentAlignment="Center"
-               VerticalContentAlignment="Center"/>
+        <Rectangle Name="k1" Grid.Column="1" Grid.Row="1" />
+        <Rectangle Name="k2" Grid.Column="3" Grid.Row="1" />
+        <Rectangle Name="k3" Grid.Column="5" Grid.Row="1" />
+        <Rectangle Name="k4" Grid.Column="7" Grid.Row="1" />
+        <Rectangle Name="k5" Grid.Column="9" Grid.Row="1" />
+        <Rectangle Name="k6" Grid.Column="11" Grid.Row="1" />        
         <Button x:Name="btnHod"
                 Content="Hoď kostky" 
                 FontSize="20"
