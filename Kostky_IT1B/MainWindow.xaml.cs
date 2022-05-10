@@ -99,7 +99,7 @@ namespace Kostky_IT1B
                 kostka.Hod();
             }
             ZobrazKostky();
-            SpocitejBody();
+            lblBody.Content = $"Body: {SpocitejBody()}" ;
         }
 
         private int SpocitejBody()

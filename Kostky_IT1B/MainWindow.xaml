@@ -44,7 +44,15 @@
         <Rectangle Name="k3" Grid.Column="5" Grid.Row="1" />
         <Rectangle Name="k4" Grid.Column="7" Grid.Row="1" />
         <Rectangle Name="k5" Grid.Column="9" Grid.Row="1" />
-        <Rectangle Name="k6" Grid.Column="11" Grid.Row="1" />        
+        <Rectangle Name="k6" Grid.Column="11" Grid.Row="1" />
+        <Label Name="lblBody" 
+               Content="Body: 0"
+               Grid.Row="5" 
+               Grid.Column="1"
+               Grid.ColumnSpan="5"
+               HorizontalAlignment="Stretch" 
+               VerticalAlignment="Stretch"
+               FontSize="40"/>
         <Button x:Name="btnHod"
                 Content="Hoď kostky" 
                 FontSize="20"
