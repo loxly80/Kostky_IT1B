@@ -94,15 +94,21 @@ namespace Kostky_IT1B
 
         private void btnHod_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var kostka in kostky)
-            {
-                kostka.Hod();
-            }
+            //foreach (var kostka in kostky)
+            //{
+            //    kostka.Hod();
+            //}
+            kostky[0].Hodnota = 4;
+            kostky[1].Hodnota = 4;
+            kostky[2].Hodnota = 4;
+            kostky[3].Hodnota = 4;
+            kostky[4].Hodnota = 1;
+            kostky[5].Hodnota = 5;
             ZobrazKostky();
-            lblBody.Content = $"Body: {SpocitejBody()}" ;
+            lblBody.Content = $"Body: {SpocitejBody(kostky)}";
         }
 
-        private int SpocitejBody()
+        private int SpocitejBody(Kostka[] kostky)
         {
             int body = 0;
             Dictionary<int, int> pocty = new Dictionary<int, int>();
@@ -135,20 +141,63 @@ namespace Kostky_IT1B
                 var kostka = pocty.First(hodnota => hodnota.Value == 5).Key;
                 if (kostka == 1) //je 5 jedniček
                 {
-                    body = 4000;
-                    body += 50 * pocty[5];
+                    body = 4000;                   
                 }
                 else
                 {
                     body = kostka * 400;
-                    body += 100 * pocty[1];
-                    if (kostka != 5)
+                    body += 100 * pocty[1];                    
+                }
+                body += 50 * pocty[5];
+            }
+            else if (pocty.ContainsValue(4)) //něčeho je 4
+            {
+                var kostka = pocty.First(hodnota => hodnota.Value == 4).Key;
+                if (kostka == 1) //je 4 jedniček
+                {
+                    body = 2000;                    
+                }
+                else
+                {
+                    body = kostka * 200;
+                    body += 100 * pocty[1];                    
+                }
+                body += 50 * pocty[5];
+            }
+            else if (pocty.ContainsValue(3)) //něčeho je 3
+            {
+                var kostka = pocty.First(hodnota => hodnota.Value == 3).Key;
+                if (kostka == 1) //je 3 jedniček
+                {
+                    body = 1000;
+                }
+                else
+                {
+                    body = kostka * 100;
+                }
+                int pocetTrojic = 0;
+                foreach(var pocet in pocty)
+                {
+                    if(pocet.Value == 3)
                     {
-                        body += 50 * pocty[5];
+                        pocetTrojic++;
                     }
                 }
             }
             return body;
+        }
+
+        public int PocetHodnot(Dictionary<int,int> pocty, int hodnota)
+        {
+            int pocetHodnot = 0;
+            foreach (var pocet in pocty)
+            {
+                if (pocet.Value == hodnota)
+                {
+                    pocetHodnot++;
+                }
+            }
+            return pocetHodnot;
         }
     }
 }

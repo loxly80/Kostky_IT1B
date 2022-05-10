@@ -8,7 +8,7 @@ namespace Kostky_IT1B
     {
         private int hodnota;
 
-        public int Hodnota { get => hodnota; }
+        public int Hodnota { get => hodnota; set => hodnota = value; }
 
         public Kostka()
         {
@@ -18,7 +18,7 @@ namespace Kostky_IT1B
         public void Hod()
         {
             Random random = new Random();
-            hodnota = random.Next(1, 7);
+            hodnota = random.Next(1, 7);            
         }
     }
 }
